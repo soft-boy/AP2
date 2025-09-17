@@ -105,7 +105,7 @@ echo "All remote servers are starting."
 
 echo "Starting ADK API server..."
 # Bind to Render's assigned port and allow all origins (or lock down to your UI origin).
-UV_RUN_CMD --package ap2-samples adk api_server \
+$UV_RUN_CMD --package ap2-samples adk api_server \
   --host 0.0.0.0 \
   --port "${PORT:-8000}" \
   --allow_origins="*" \
