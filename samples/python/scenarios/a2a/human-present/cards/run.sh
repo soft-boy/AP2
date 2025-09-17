@@ -41,7 +41,7 @@ source .venv/bin/activate
 echo "Virtual environment activated."
 
 echo "Installing project in editable mode..."
-uv pip install -e .
+pip install -e .
 
 # Create a directory for log files.
 mkdir -p "$LOG_DIR"
@@ -104,4 +104,4 @@ echo ""
 echo "All remote servers are starting."
 
 echo "Starting the Shopping Agent..."
-$UV_RUN_CMD --package ap2-samples adk web --host 0.0.0.0 $AGENTS_DIR
+$UV_RUN_CMD --package ap2-samples adk web --host 0.0.0.0 --port "${PORT:-8000}" "$AGENTS_DIR"
