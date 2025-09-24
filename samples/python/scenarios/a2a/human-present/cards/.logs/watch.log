@@ -1,0 +1,29 @@
+MerchantAgent listening on http://localhost:8001
+
+
+
+
+---------- New Agent Request Received---------
+GET http://127.0.0.1:8001/
+
+
+[Request Body]
+<empty>
+
+
+[Response Body]
+Not Found
+
+
+
+
+---------- New Agent Request Received---------
+GET http://127.0.0.1:8001/favicon.ico
+
+
+[Request Body]
+<empty>
+
+
+[Response Body]
+Not Found
