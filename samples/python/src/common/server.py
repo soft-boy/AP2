@@ -80,9 +80,10 @@ def run_agent_blocking(
   _add_middlewares(app, logger)
 
   # Start the server.
-  logger.info("%s listening on http://localhost:%d", agent_card.name, port)
+  host = "0.0.0.0"  # Bind to all interfaces for cloud deployment
+  logger.info("%s listening on http://%s:%d", agent_card.name, host, port)
   uvicorn.run(
-      app, host="127.0.0.1", port=port, log_level="info", timeout_keep_alive=120
+      app, host=host, port=port, log_level="info", timeout_keep_alive=120
   )
 
 

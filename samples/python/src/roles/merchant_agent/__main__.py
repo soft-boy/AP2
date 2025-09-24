@@ -14,6 +14,7 @@
 
 """Main for the merchant agent."""
 
+import os
 from collections.abc import Sequence
 
 from absl import app
@@ -21,7 +22,7 @@ from absl import app
 from roles.merchant_agent.agent_executor import MerchantAgentExecutor
 from common import server
 
-AGENT_MERCHANT_PORT = 8001
+AGENT_MERCHANT_PORT = int(os.environ.get("PORT", 8001))
 
 def main(argv: Sequence[str]) -> None:
   agent_card = server.load_local_agent_card(__file__)
